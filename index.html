@@ -60,12 +60,10 @@
       from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    /* Confetti */
     .confetti {
       position: absolute;
       width: 10px;
       height: 10px;
-      background-color: gold;
       top: -10px;
       animation: fall 3s linear infinite;
       opacity: 0.7;
@@ -77,7 +75,7 @@
   </style>
 </head>
 <body>
-  <!-- Confetti elements -->
+  <!-- Confetti generator -->
   <script>
     for (let i = 0; i < 40; i++) {
       const confetti = document.createElement("div");
@@ -95,9 +93,15 @@
   <!-- Main Card -->
   <div class="container">
     <h1>🎉 Thank You for Your Purchase!</h1>
-    <p>Your payment was successful. Click below to download your app.</p>
-    <a href="https://files.catbox.moe/gd9nlz.apk" class="btn">⬇️ Download Now</a>
+    <p>Your payment was successful. Your download will start shortly.</p>
+    <a id="downloadBtn" href="https://files.catbox.moe/gd9nlz.apk" class="btn" download>⬇️ Download Now</a>
   </div>
+
+  <script>
+    // Auto-trigger download after 3 seconds
+    setTimeout(() => {
+      document.getElementById("downloadBtn").click();
+    }, 3000);
+  </script>
 </body>
 </html>
-p
